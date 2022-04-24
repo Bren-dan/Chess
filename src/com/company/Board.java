@@ -95,7 +95,28 @@ public class Board {
             }
             // if a white piece is being added
             if(white.contains(iter)) {
-                JLabel piece = new JLabel(new ImageIcon(wQ));
+                JLabel piece;
+                switch (iter) {
+                    case "P":
+                    piece = new JLabel(new ImageIcon(wP));
+                    break;
+                    case "N":
+                    piece = new JLabel(new ImageIcon(wN));
+                    break;
+                    case "B":
+                    piece = new JLabel(new ImageIcon(wB));
+                    break;
+                    case "R":
+                    piece = new JLabel(new ImageIcon(wR));
+                    break;
+                    case "Q":
+                    piece = new JLabel(new ImageIcon(wQ));
+                    break;
+                    default:
+                    piece = new JLabel(new ImageIcon(wK));
+                    break;
+                }
+
                 board.get(rank)[file].setPiece(new Piece(iter));
                 board.get(rank)[file].getPanel().add(piece);
 
@@ -104,7 +125,27 @@ public class Board {
 
             // if a black piece is being added
             if(black.contains(iter)) {
-                JLabel piece = new JLabel(new ImageIcon(bQ));
+                JLabel piece;
+                    switch (iter) {
+                        case "p":
+                            piece = new JLabel(new ImageIcon(bP));
+                            break;
+                        case "n":
+                            piece = new JLabel(new ImageIcon(bN));
+                            break;
+                        case "b":
+                            piece = new JLabel(new ImageIcon(bB));
+                            break;
+                        case "r":
+                            piece = new JLabel(new ImageIcon(bR));
+                            break;
+                        case "q":
+                            piece = new JLabel(new ImageIcon(bQ));
+                            break;
+                        default:
+                            piece = new JLabel(new ImageIcon(bK));
+                            break;
+                    }
                 board.get(rank)[file].setPiece(new Piece(iter));
                 board.get(rank)[file].getPanel().add(piece);
                 file++;
